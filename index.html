@@ -42,8 +42,7 @@
         "https://www.linkedin.com/in/anthony-c-baez",
         "https://github.com/antbaez",
         "https://scholar.google.com/citations?user=yUlCF9oAAAAJ&hl=en"
-      ],
-      "email": "acbaez@mit.edu"
+      ]
     }
     </script>
 
@@ -91,7 +90,7 @@
             top: 50%;
             transform: translateY(-50%);
             width: 2px;
-            height: 28px;
+            height: 40px;
             background-color: #000000;
         }
         .navbar-nav .nav-item:first-child::before {
@@ -101,7 +100,7 @@
             top: 50%;
             transform: translateY(-50%);
             width: 2px;
-            height: 28px;
+            height: 40px;
             background-color: #000000;
         }
         .navbar-nav .nav-link {
@@ -139,26 +138,26 @@
 
     <!-- Profile Section -->
     <div class="container mt-2" style="max-width: 750px;">
-      <h1 class="text-center mt-3 mb-3" style="font-size: 2.0rem;">Anthony Baez</h1>
+      <h1 class="text-center mt-3 mb-3" style="font-size: 2.25rem;">Anthony Baez</h1>
       <div class="row align-items-start g-4">
 
           <div class="col text-start">
               <p>
-                Welcome to my website! I am a master's student at <a href="https://web.mit.edu/" target="_blank">MIT</a> in the <a href="https://www.media.mit.edu/graduate-program/about-media-arts-sciences/" target="_blank">MAS</a> program studying Artificial Intelligence and Decision Making, where I work
+                Welcome to my website! I am a graduate student at <a href="https://web.mit.edu/" target="_blank">MIT</a> in the <a href="https://www.media.mit.edu/graduate-program/about-media-arts-sciences/" target="_blank">MAS</a> program, where I work
                 in the <a href="https://www.media.mit.edu/groups/cyborg-psychology/overview/" target="_blank">Cyborg Psychology</a> group under <a href="https://www.media.mit.edu/people/patpat/overview/" target="_blank">Prof. Pat Pataranutaporn</a> in the <a href="https://www.media.mit.edu/" target="_blank">Media Lab</a>.
                 I am also a recipient of the <a href="https://www.nsfgrfp.org/" target="_blank">NSF Graduate Research Fellowship</a>.
               </p>
               <p>
-                My research interests lie in <b>mechanistic interpretability</b> for improving our understanding and safety of LLMs.
-                I am also interested in how we can apply mechanistic interpretability for better monitoring and control in human-AI interaction, for both technical and non-technical users.
+                My research interests lie in improving our understanding and safety of LLMs using <b>mechanistic interpretability</b>.
+                I am also interested in how we can apply mechanistic interpretability for better monitoring and control in human-AI interaction.
               </p>
               <p>
-                Outside of work, I enjoy traveling, and learning other languages, hiking, videogames, and everything science fiction.
+                Outside of work, I enjoy traveling, learning other languages, hiking, videogames, and everything science fiction.
               </p>
               <p>
-                <a href="mailto:acbaez@mit.edu" target="_blank">Email</a> - <a href="Baez_CV.pdf" target="_blank">CV</a>
-                 - <a href="https://www.linkedin.com/in/anthony-c-baez" target="_blank">LinkedIn</a>
+                <a class="js-email" data-u="zeabca" data-d="ude.tim" href="#">Email</a>
                  - <a href="https://scholar.google.com/citations?user=yUlCF9oAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                 - <a href="https://www.linkedin.com/in/anthony-c-baez" target="_blank">LinkedIn</a>
                  - <a href="https://github.com/antbaez" target="_blank">Github</a>
               </p>
           </div>
@@ -193,24 +192,11 @@
                 <i>Under Review</i>
               </p>
               <p>
-                <a href="https://arxiv.org/pdf/2511.00230" target="_blank">Neural Transparency: Mechanistic Interpretability Interfaces for Anticipating Model Behaviors for Personalized AI</a>
-                <br>
-                Sheer Karny*, <b>Anthony Baez</b>*, and Pat Pataranutaporn
-                <br>
-                <i>*Equal Contribution</i>
-                <br>
-                <i>ACM Conference on Intelligent User Interfaces 2026</i>
-                <br>
-                <a href="https://github.com/mitmedialab/neural-transparency" target="_blank">Code</a>
-              </p>
-              <p>
                 <a href="https://arxiv.org/pdf/2511.09048" target="_blank">Guaranteeing Conservation of Integrals in Physics-Informed Neural Networks</a>
                 <br>
                 <b>Anthony Baez</b>, Wang Zhang, Ziwen Ma, Subhro Das, Lam M Nguyen, and Luca Daniel
                 <br>
                 <i>Arxiv Preprint</i>
-                <br>
-                <a href="https://github.com/antbaez/pinn-proj" target="_blank">Code</a>
               </p>
           </div>
       </div>
@@ -231,13 +217,23 @@
 
       <!-- Footer -->
       <footer class="mt-5 mb-4 text-center" style="font-size: 14px; color: #666;">
-        <p>Anthony Baez &middot; MIT &middot; <a href="mailto:acbaez@mit.edu">acbaez@mit.edu</a></p>
+        <p>Anthony Baez &middot; MIT &middot; <a class="js-email js-email-show" data-u="zeabca" data-d="ude.tim" href="#">[enable JavaScript to see email]</a></p>
       </footer>
 
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Assemble email at runtime so it isn't in the HTML for scrapers -->
+    <script>
+      document.querySelectorAll('.js-email').forEach(function (el) {
+        var rev = function (s) { return s.split('').reverse().join(''); };
+        var addr = rev(el.dataset.u) + String.fromCharCode(64) + rev(el.dataset.d);
+        el.href = 'mai' + 'lto:' + addr;
+        if (el.classList.contains('js-email-show')) el.textContent = addr;
+      });
+    </script>
 
 </body>
 </html>
